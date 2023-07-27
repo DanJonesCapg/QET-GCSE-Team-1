@@ -22,8 +22,8 @@
         const options = { method: "GET" };
 
         //Update the URL with the get details URL
-
-        fetch("http://18.207.173.95:8080/bank/John Smith", options)
+        let username = localStorage.getItem("username")
+        fetch("http://18.207.173.95:8080/bank/" + username, options)
 
             .then((response) => response.json())
 
@@ -41,11 +41,11 @@
 
                 document.getElementById("currentSortCode").innerHTML = y.currentAccountDto.currentAccountSortCode;
                 document.getElementById("currentAccountNumber").innerHTML = y.currentAccountDto.currentAccountNumber;
-                document.getElementById("currentAccountBalance").innerHTML = y.currentAccountDto.currentAccountBalance + "£";
+                document.getElementById("currentAccountBalance").innerHTML = "£" + y.currentAccountDto.currentAccountBalance;
 
                 document.getElementById("savingSortCode").innerHTML = y.savingsAccountDto.savingsAccountSortCode;
                 document.getElementById("savingAccountNumber").innerHTML = y.savingsAccountDto.savingsAccountNumber;
-                document.getElementById("savingAccountBalance").innerHTML = y.savingsAccountDto.savingsAccountBalance + "£";
+                document.getElementById("savingAccountBalance").innerHTML = "£" + y.savingsAccountDto.savingsAccountBalance;
             })
 
             .catch((err) => alert("Unable to get the data from API", err));</script>
