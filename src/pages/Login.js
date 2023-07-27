@@ -7,7 +7,7 @@ function login() {
   // Check if the entered username and password match the credentials
   if (username === 'Bitmashers' && password === 'Bitmashers123') {
     // Redirect to the dashboard page
-    window.location.href = 'dashboard.html';
+    window.location.href = 'Home.html';
   } else {
     // Decrement the login attempts
     attempts--;
