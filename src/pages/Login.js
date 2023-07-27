@@ -25,7 +25,7 @@ function login() {
 
 // Number of login attempts allowed
 let attempts = 3;
-
+console.log("Test")
 // Attach the login function to the form's submit event
 document.querySelector('.u-form-1').addEventListener('submit', function(event) {
   event.preventDefault();

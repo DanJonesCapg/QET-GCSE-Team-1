@@ -9,16 +9,32 @@
 <link rel="stylesheet" href="Home.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <!-- <script class="u-script" type="text/javascript" src="template.js" defer=""></script> -->
     <meta name="generator" content="Nicepage 5.14.0, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
     
-    
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": ""
-}</script>
+    <script>///GET CALL
+
+      const options = { method: "GET" };
+  
+      //Update the URL with the get details URL
+  
+      fetch("http://18.207.173.95:8080/bank/John Smith", options)
+  
+        .then((response) => response.json())
+  
+        .then((y) => {
+  
+          console.log(y);
+  
+          //update y.title to a parameter from the real URL
+  
+          document.getElementById("get").innerHTML = y.title;
+  
+        })
+  
+        .catch((err) => alert("Unable to get the data from API", err));</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Home">
     <meta property="og:type" content="website">
@@ -69,13 +85,11 @@
         </div>
         <div class="u-container-style u-custom-color-2 u-group u-radius-41 u-shape-round u-group-2">
           <div class="u-container-layout u-container-layout-2">
-            <h5 class="u-align-center u-text u-text-4">&lt;Name&gt;<br>
-              <br>&lt;phone Number&gt;<br>
-              <br>&lt;Email&gt;<br>
-              <br>&lt;Address&gt;<br>&lt;Address Line 2&gt;<br>&lt;Address Line 3&gt;<br>
-              <br>
-              <br>&lt;Occupation&gt;
-            </h5>
+            <h5 id="name"></h5>
+            <h5 id="phonenumber"></h5>
+            <h5 id="email"></h5>
+            <h5 id="address"></h5>
+            <h5 id="occupation"></h5>
           </div>
         </div><span class="u-icon u-text-black u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 55 55" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6396"></use></svg><svg class="u-svg-content" viewBox="0 0 55 55" x="0px" y="0px" id="svg-6396" style="enable-background:new 0 0 55 55;"><path d="M55,27.5C55,12.337,42.663,0,27.5,0S0,12.337,0,27.5c0,8.009,3.444,15.228,8.926,20.258l-0.026,0.023l0.892,0.752
 	c0.058,0.049,0.121,0.089,0.179,0.137c0.474,0.393,0.965,0.766,1.465,1.127c0.162,0.117,0.324,0.234,0.489,0.348
