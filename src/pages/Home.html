@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="Home.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <!-- <script class="u-script" type="text/javascript" src="template.js" defer=""></script> -->
+
     <meta name="generator" content="Nicepage 5.14.0, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
@@ -39,7 +39,13 @@
                 document.getElementById("address").innerHTML = y.customerResidentialAddress;
                 document.getElementById("occupation").innerHTML = y.customerOccupation;
 
+                document.getElementById("currentSortCode").innerHTML = y.currentAccountDto.currentAccountSortCode;
+                document.getElementById("currentAccountNumber").innerHTML = y.currentAccountDto.currentAccountNumber;
+                document.getElementById("currentAccountBalance").innerHTML = y.currentAccountDto.currentAccountBalance + "£";
 
+                document.getElementById("savingSortCode").innerHTML = y.savingsAccountDto.savingsAccountSortCode;
+                document.getElementById("savingAccountNumber").innerHTML = y.savingsAccountDto.savingsAccountNumber;
+                document.getElementById("savingAccountBalance").innerHTML = y.savingsAccountDto.savingsAccountBalance + "£";
             })
 
             .catch((err) => alert("Unable to get the data from API", err));</script>
@@ -103,40 +109,34 @@
                     <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
                 </div>
             </nav>
-            <img class="u-image u-image-contain u-image-default u-image-1" src="images/CapgeminiBank.png" alt=""
+            <img class="u-image u-image-contain u-image-default u-image-1" src="../images/CapgeminiBank.png" alt=""
                 data-image-width="514" data-image-height="195">
             <a href="https://nicepage.studio"
                 class="u-active-palette-1-dark-3 u-border-none u-btn u-button-style u-custom-color-1 u-hover-palette-2-base u-btn-1">Log
                 Out</a>
         </div>
     </header>
-    <section class="u-clearfix u-section-1" id="sec-3562">
-        <div class="u-clearfix u-sheet u-sheet-1">
-            <h4 class="u-align-center u-text u-text-1">Welcome to Online Banking</h4>
-            <div class="u-align-left u-container-style u-custom-color-2 u-group u-radius-41 u-shape-round u-group-1">
-                <div class="u-container-layout u-container-layout-1">
-                    <h4 class="u-text u-text-2">Current Account:<br>
-                        <span style="font-size: 1.25rem;">Sort Code:<br>Account Number:
-                        </span>
-                    </h4>
-                    <h3 class="u-align-center u-text u-text-3">Balance:<br>£0.00
-                    </h3>
+    <section>
+        <section class="u-clearfix u-section-1" id="sec-3562">
+            <div class="u-clearfix u-sheet u-sheet-1">
+                <h4 class="u-align-center u-text ">Welcome to Online Banking</h4>
+
+                <div class="u-container-style u-custom-color-2 u-group u-radius-41 u-shape-round u-group-2">
+                    <div class="u-container-layout u-container-layout-2">
+                        Name: <h5 id="name"></h5>
+                        Phone Number:<h5 id="phonenumber"></h5>
+                        Email:<h5 id="email"></h5>
+                        Address:<h5 id="address"></h5>
+                        Occupation: <h5 id="occupation"></h5>
+                    </div>
                 </div>
-            </div>
-            <div class="u-container-style u-custom-color-2 u-group u-radius-41 u-shape-round u-group-2">
-                <div class="u-container-layout u-container-layout-2">
-                    Name: <h5 id="name"></h5>
-                    Phone Number:<h5 id="phonenumber"></h5>
-                    Email:<h5 id="email"></h5>
-                    Address:<h5 id="address"></h5>
-                    Occupation: <h5 id="occupation"></h5>
-                </div>
-            </div><span class="u-icon u-text-black u-icon-1"><svg class="u-svg-link"
-                    preserveAspectRatio="xMidYMin slice" viewBox="0 0 55 55" style="">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6396"></use>
-                </svg><svg class="u-svg-content" viewBox="0 0 55 55" x="0px" y="0px" id="svg-6396"
-                    style="enable-background:new 0 0 55 55;">
-                    <path d="M55,27.5C55,12.337,42.663,0,27.5,0S0,12.337,0,27.5c0,8.009,3.444,15.228,8.926,20.258l-0.026,0.023l0.892,0.752
+
+                <span class="u-icon u-text-black u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice"
+                        viewBox="0 0 55 55" style="">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6396"></use>
+                    </svg><svg class="u-svg-content" viewBox="0 0 55 55" x="0px" y="0px" id="svg-6396"
+                        style="enable-background:new 0 0 55 55;">
+                        <path d="M55,27.5C55,12.337,42.663,0,27.5,0S0,12.337,0,27.5c0,8.009,3.444,15.228,8.926,20.258l-0.026,0.023l0.892,0.752
 	c0.058,0.049,0.121,0.089,0.179,0.137c0.474,0.393,0.965,0.766,1.465,1.127c0.162,0.117,0.324,0.234,0.489,0.348
 	c0.534,0.368,1.082,0.717,1.642,1.048c0.122,0.072,0.245,0.142,0.368,0.212c0.613,0.349,1.239,0.678,1.88,0.98
 	c0.047,0.022,0.095,0.042,0.142,0.064c2.089,0.971,4.319,1.684,6.651,2.105c0.061,0.011,0.122,0.022,0.184,0.033
@@ -152,32 +152,52 @@
 	s-7.024,1.065-8.867,3.168c-2.119,2.416-1.935,5.346-1.883,5.864v4.667c-0.568,0.661-0.887,1.502-0.887,2.369v3.545
 	c0,1.101,0.494,2.128,1.34,2.821c0.81,3.173,2.477,5.575,3.093,6.389v2.894c0,0.816-0.445,1.566-1.162,1.958l-7.907,4.313
 	c-0.252,0.137-0.502,0.297-0.752,0.476C5.276,41.792,2,35.022,2,27.5z"></path>
-                </svg></span>
-            <div class="u-custom-color-2 u-radius-41 u-shape u-shape-round u-shape-1"></div>
-            <h4 class="u-align-left u-text u-text-5">Recent Transactions</h4>
-            <h6 class="u-align-left u-text u-text-6"> &lt;Amount&gt;&nbsp; &nbsp; &nbsp; &nbsp;&lt;From/TO&gt;&nbsp;
-                &nbsp; &nbsp; &nbsp; &lt;Money in // out&gt;&nbsp; &nbsp; &nbsp; &nbsp; &lt;Transaction Status&gt;</h6>
-            <h6 class="u-align-left u-text u-text-7"> &lt;Amount&gt;&nbsp; &nbsp; &nbsp; &nbsp;&lt;From/TO&gt;&nbsp;
-                &nbsp; &nbsp; &nbsp; &lt;Money in // out&gt;&nbsp; &nbsp; &nbsp; &nbsp; &lt;Transaction Status&gt;</h6>
-            <h6 class="u-align-left u-text u-text-8"> &lt;Amount&gt;&nbsp; &nbsp; &nbsp; &nbsp;&lt;From/TO&gt;&nbsp;
-                &nbsp; &nbsp; &nbsp; &lt;Money in // out&gt;&nbsp; &nbsp; &nbsp; &nbsp; &lt;Transaction Status&gt;</h6>
-            <h6 class="u-align-left u-text u-text-9"> &lt;Amount&gt;&nbsp; &nbsp; &nbsp; &nbsp;&lt;From/TO&gt;&nbsp;
-                &nbsp; &nbsp; &nbsp; &lt;Money in // out&gt;&nbsp; &nbsp; &nbsp; &nbsp; &lt;Transaction Status&gt;</h6>
-            <h6 class="u-align-left u-text u-text-10"> &lt;Amount&gt;&nbsp; &nbsp; &nbsp; &nbsp;&lt;From/TO&gt;&nbsp;
-                &nbsp; &nbsp; &nbsp; &lt;Money in // out&gt;&nbsp; &nbsp; &nbsp; &nbsp; &lt;Transaction Status&gt;</h6>
-            <div class="u-container-style u-custom-color-2 u-group u-radius-41 u-shape-round u-group-3">
-                <div class="u-container-layout u-container-layout-3">
-                    <h4 class="u-text u-text-11">Savings Account:<br>
-                        <span style="font-size: 1.25rem;">Sort Code:<br>Account Number:
-                        </span>
-                    </h4>
-                    <h3 class="u-align-center u-text u-text-12">Balance:<br>£0.00
-                    </h3>
-                </div>
-            </div>
-        </div>
-    </section>
+                    </svg></span>
 
+
+                <div>
+                    <div
+                        class="u-align-left u-container-style u-custom-color-2 u-group u-radius-41 u-shape-round u-group-1">
+                        <div class="u-container-layout u-container-layout-1">
+                            <h4 class="u-text u-text-2">Current Account:
+                            </h4>
+                            <h3 class="u-text u-text-2">
+                                <span style="font-size: 1.25rem;">
+                                    Sort Code:<p id="currentSortCode"></p>
+                                </span>
+                                <span style="font-size: 1.25rem;">
+                                    Account Number:<p id="currentAccountNumber"></p>
+                                </span>
+                                <span style="font-size: 1.25rem;">
+                                    Balance:<p id="currentAccountBalance"></p>
+                                </span>
+                            </h3>
+
+                        </div>
+                    </div>
+                    <div class="u-container-style u-custom-color-2 u-group u-radius-41 u-shape-round u-group-3">
+                        <div class="u-container-layout u-container-layout-3">
+                            <h4 class="u-text u-text-11">Savings Account:</h4>
+                            <h3 class="u-text u-text-2">
+                                <span style="font-size: 1.25rem;">
+                                    Sort Code: <p id="savingSortCode"></p>
+                                </span>
+
+                                <span style="font-size: 1.25rem;">
+                                    Account Number:<p id="savingAccountNumber"></p>
+                                </span>
+                                <span style="font-size: 1.25rem;">
+                                    Balance:<br>
+                                    <p id="savingAccountBalance"></p>
+                                </span>
+                            </h3>
+                        </div>
+                    </div>
+
+
+                </div>
+        </section>
+    </section>
 
 
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-7632">
